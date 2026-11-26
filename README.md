@@ -11,15 +11,14 @@ Smart contract em Solidity · Hardhat · Frontend React + MetaMask
 
 </div>
 
-> ⚠️ Projeto educacional, **não auditado**. Use apenas em redes locais/testnets.
 
-## ✨ O que é
+## O que é
 
 Um sistema em que qualquer pessoa cria uma campanha com **meta** e **prazo**, e qualquer pessoa pode apoiar com ETH. As regras vivem no contrato inteligente, sem intermediários:
 
-- ✅ **Meta atingida** até o prazo → o criador saca os fundos (menos a taxa da plataforma).
-- ❌ **Meta não atingida** → cada apoiador recupera integralmente sua contribuição.
-- 🛑 **Cancelamento** → o criador pode cancelar uma campanha ativa; todos são reembolsados.
+-  **Meta atingida** até o prazo → o criador saca os fundos (menos a taxa da plataforma).
+-  **Meta não atingida** → cada apoiador recupera integralmente sua contribuição.
+-  **Cancelamento** → o criador pode cancelar uma campanha ativa; todos são reembolsados.
 
 ### Recursos
 
@@ -32,7 +31,7 @@ Um sistema em que qualquer pessoa cria uma campanha com **meta** e **prazo**, e 
 | `Ownable2Step` + `ReentrancyGuard` | Painel de administrador | Documentação de arquitetura e segurança |
 | Leitura paginada e erros customizados | Mensagens de erro em português | Dependabot, solhint, templates de PR/issue |
 
-## 🗂 Estrutura
+## Estrutura
 
 ```
 ├── contracts/
@@ -52,7 +51,7 @@ Um sistema em que qualquer pessoa cria uma campanha com **meta** e **prazo**, e 
 └── .env.example
 ```
 
-## 🚀 Início rápido (rede local, sem custo)
+##  Início rápido (rede local, sem custo)
 
 Pré-requisitos: [Node.js 18+](https://nodejs.org) e a extensão [MetaMask](https://metamask.io).
 
@@ -100,7 +99,7 @@ npm run time-travel            # avança 31 dias (ou: DAYS=10 npm run time-trave
 
 Recarregue o app: campanhas com meta atingida mostram **Sacar**; as falhas mostram **Pedir reembolso**.
 
-## 🌐 Deploy na testnet Sepolia
+## Deploy na testnet Sepolia
 
 1. Crie `.env` a partir do modelo e preencha (use uma carteira **só de testes**):
    ```bash
@@ -129,7 +128,7 @@ npm run frontend:build        # gera frontend/dist
 
 Configure as variáveis `VITE_DEFAULT_CHAIN_ID=11155111` (e, se quiser, `VITE_CONTRACT_ADDRESS`, `VITE_SEPOLIA_RPC_URL`) no provedor de hospedagem. Veja `frontend/.env.example`.
 
-## 📜 Referência do contrato
+## Referência do contrato
 
 ### Funções de usuários
 
@@ -171,7 +170,7 @@ await cf.contribute(1, { value: ethers.parseEther("1") });
 console.log(await cf.getCampaign(1));
 ```
 
-## 🧪 Qualidade
+## Qualidade
 
 ```bash
 npm test               # 46 testes do contrato
@@ -195,28 +194,5 @@ Veja [docs/SEGURANCA.md](docs/SEGURANCA.md) e [docs/ARQUITETURA.md](docs/ARQUITE
 | `HH502` ao compilar | Sem acesso à internet para baixar o compilador Solidity (`binaries.soliditylang.org`). |
 | Campanha "Ativa" mas prazo já passou (local) | O relógio da rede local é o do último bloco; faça qualquer transação ou `npm run time-travel`. |
 
-## 🗺 Roadmap
-
-- [ ] Liberação de fundos por marcos (*milestones*) com votação dos apoiadores
-- [ ] Suporte a tokens ERC-20 (USDC) e NFTs de recompensa
-- [ ] Indexação de eventos com The Graph para listas maiores
-- [ ] Upload de imagens para IPFS direto no formulário
-- [ ] Fuzzing (Foundry) e análise com Slither no CI
-- [ ] Versão upgradeável (UUPS) e auditoria
-
-## 📤 Publicando no GitHub
-
-```bash
-git init
-git add .
-git commit -m "feat: plataforma de crowdfunding com contrato, testes e frontend"
-git branch -M main
-git remote add origin https://github.com/SEU_USUARIO/crowdfunding-blockchain.git
-git push -u origin main
-```
-
-Troque `SEU_USUARIO` (inclusive no selo de CI acima). O workflow em `.github/workflows/ci.yml` roda lint, testes e build a cada push.
-
-## 🤝 Contribuindo e licença
 
 Veja [CONTRIBUTING.md](CONTRIBUTING.md) e [SECURITY.md](SECURITY.md). Licença [MIT](LICENSE).
