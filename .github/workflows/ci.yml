@@ -14,8 +14,10 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 20
-          cache: npm
-      - run: npm ci
+      - name: Instalar dependências (Linux)
+        run: |
+          rm -rf node_modules package-lock.json
+          npm install
       - run: npm run lint:sol
       - run: npx hardhat test
 
