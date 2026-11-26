@@ -1,0 +1,12 @@
+node_modules/
+.env
+cache/
+artifacts/
+coverage/
+coverage.json
+typechain-types/
+gas-report.txt
+dist/
+.DS_Store
+# deployments locais não devem ser versionados (endereços mudam a cada `hardhat node`)
+deployments/localhost.json

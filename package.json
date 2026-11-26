@@ -1,0 +1,33 @@
+{
+  "name": "crowdfunding-blockchain",
+  "version": "2.0.0",
+  "description": "Plataforma de crowdfunding descentralizada (tudo ou nada) em Solidity/Ethereum com frontend React",
+  "license": "MIT",
+  "scripts": {
+    "compile": "hardhat compile",
+    "clean": "hardhat clean",
+    "test": "hardhat test",
+    "test:gas": "REPORT_GAS=true hardhat test",
+    "coverage": "hardhat coverage",
+    "lint:sol": "solhint 'contracts/**/*.sol'",
+    "node": "hardhat node",
+    "deploy:local": "hardhat run scripts/deploy.js --network localhost",
+    "deploy:sepolia": "hardhat run scripts/deploy.js --network sepolia",
+    "seed": "hardhat run scripts/seed.js --network localhost",
+    "time-travel": "hardhat run scripts/time-travel.js --network localhost",
+    "abi": "hardhat run scripts/export-abi.js",
+    "frontend:install": "npm --prefix frontend install",
+    "frontend:dev": "npm --prefix frontend run dev",
+    "frontend:build": "npm --prefix frontend run build",
+    "frontend:test": "npm --prefix frontend test"
+  },
+  "devDependencies": {
+    "@nomicfoundation/hardhat-toolbox": "^5.0.0",
+    "dotenv": "^16.4.5",
+    "hardhat": "^2.22.0",
+    "solhint": "^5.0.3"
+  },
+  "dependencies": {
+    "@openzeppelin/contracts": "^5.0.2"
+  }
+}
